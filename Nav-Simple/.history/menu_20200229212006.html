@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="menu.css">
+    <title>menu</title>
+</head>
+
+<body>
+
+    <!-- En-tête commune -->
+    <header>
+        <h1 class="ui center aligned header">
+            <a href="<?= $requestUrl ?>">
+                <img class="ui centered circular image" src="images/logo.png" height="90" width="200"
+                    alt="Meilleur Camping">
+                Camping Lagrisse
+            </a>
+        </h1>
+    </header>
+
+    <ul id="menu">
+        <li class="violet"><a href="#">Administration</a>
+            <ul>
+                <?php if (!$adminSession->isAuthenticated()) : ?>
+                <li><a href="<?= $requestUrl ?>/admin/register" class="item">Admin auth</a></li>
+                <li><a href="<?= $requestUrl ?>/admin/login" class="item">Login</a></li>
+                <?php endif; ?>
+
+                <?php if ($adminSession->isAuthenticated()) : ?>
+                <li>
+                    <a href="#" class="item">Bonjour :
+                        <?= ucfirst($adminSession->getName()) ?>&nbsp;&nbsp;
+                    </a>
+                </li>
+                <li><a href="<?= $requestUrl ?>/admin/logout" class="item">Logout</a></li>
+
+
+                {# <ul>
+                        <li><a href="#">Lien sous sous menu</a></li>
+                        <li><a href="#">Lien sous sous menu</a></li>
+                        <li><a href="#">Lien sous sous menu plus long</a></li>
+                    </ul>
+                </li> #}
+                <li><a href="<?= $requestUrl ?>/admin/produits" class="item">Produits</a>
+                    <ul>
+                        <li><a href="#">Editer</a></li>
+                        <li><a href="#">Supprimer</a></li>
+                        <li><a href="#">Ajouter</a></li>
+                    </ul>
+                </li>
+                <li><a href="<?= $requestUrl ?>/admin/menus" class="item">Nos Menus</a>
+                    <ul>
+                        <li><a href="#">Ajouiter</a></li>
+                        <li><a href="#">Editer</a></li>
+                        <li><a href="#">Supprimer</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <!--
+-->
+        <li class="bleu"><a href="#">Lien menu</a>
+            <ul>
+                <li><a href="#">Lien sous menu</a>
+                    <ul>
+                        <li><a href="#">Lien sous sous menu</a></li>
+                        <li><a href="#">Lien sous sous menu</a></li>
+                        <li><a href="#">Lien sous sous menu</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Lien sous menu</a>
+                    <ul>
+                        <li><a href="#">Lien sous sous menu</a></li>
+                        <li><a href="#">Lien sous sous menu</a></li>
+                        <li><a href="#">Lien sous sous menu</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Lien sous menu</a>
+                    <ul>
+                        <li><a href="#">Lien sous sous menu</a></li>
+                        <li><a href="#">Lien sous sous menu</a></li>
+                        <li><a href="#">Lien sous sous menu</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <!--
+-->
+        <li class="orange"><a href="#">Lien menu</a>
+            <ul>
+                <li><a href="#">Lien sous menu</a>
+                    <ul>
+                        <li><a href="#">Lien sous sous menu</a></li>
+                        <li><a href="#">Lien sous sous menu</a></li>
+                        <li><a href="#">Lien sous sous menu</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Lien sous menu</a>
+                    <ul>
+                        <li><a href="#">Lien sous sous menu</a></li>
+                        <li><a href="#">Lien sous sous menu</a></li>
+                        <li><a href="#">Lien sous sous menu</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Lien sous menu</a>
+                    <ul>
+                        <li><a href="#">Lien sous sous menu</a></li>
+                        <li><a href="#">Lien sous sous menu</a></li>
+                        <li><a href="#">Lien sous sous menu</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <!--
+-->
+        <li class="vert"><a href="#">Lien menu</a>
+            <ul>
+                <li><a href="#">Lien sous menu</a>
+                    <ul>
+                        <li><a href="#">Lien sous sous menu</a></li>
+                        <li><a href="#">Lien sous sous menu</a></li>
+                        <li><a href="#">Lien sous sous menu</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Lien sous menu</a>
+                    <ul>
+                        <li><a href="#">Lien sous sous menu</a></li>
+                        <li><a href="#">Lien sous sous menu</a></li>
+                        <li><a href="#">Lien sous sous menu</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Lien sous menu</a>
+                    <ul>
+                        <li><a href="#">Lien sous sous menu</a></li>
+                        <li><a href="#">Lien sous sous menu</a></li>
+                        <li><a href="#">Lien sous sous menu</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</body>
+
+</html>
